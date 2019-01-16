@@ -6,28 +6,34 @@ button{
 	font-size: 22px;
 	background-color: #E6ECDF;
 }
-
-p{
+h1{
 	position: relative;
-	top: 10px;
-	display: inline-block;
-	font-size: 32px;
-	float: right;
+	bottom: 30px;
+	text-align: center;
+}
+
+p.historyElement{
+	position: relative;
+	bottom: 45px;
+	display: block;
+	font-size: 28px;
 	margin: 0;
-	margin-top: 3px;
+	margin-bottom: 3px;
 	margin-right: 5px;
-	
+	padding: 0;
+	float: right;
+	word-break: break-word;
 }
 
 .Calulator{
 	display: grid;
-	grid-template: 1fr 10fr / 9fr 3fr;
+	grid-template: 1fr 10fr / 500px 1fr;
 	position: relative;
 	top: 150px;
 	margin: 0 auto;
 	border: 2px solid black;
 	height: 500px;
-	width: 600px;
+	width: 800px;
 	
 }
 .title{
@@ -48,6 +54,7 @@ p{
 	font-size: 18px;
 	padding-left: 5px;
 	padding-top: 5px;
+	display: block;
 }
 
 .buttonContainer{
@@ -64,6 +71,17 @@ p{
 }
 
 .dotButton{
-	font-size: 50px;
+	font-size: 30px;
+}
+#TitleBar{
+	
+	position: relative;
+	top: 10px;
+	display: inline-block;
+	font-size: 32px;
+	float: right;
+	margin: 0;
+	margin-top: 3px;
+	margin-right: 5px;
 }
 
