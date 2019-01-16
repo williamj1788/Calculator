@@ -23,22 +23,47 @@ var eventHandler = (element) =>{
 
 var ConvertToNumber = () =>{
 	let text = titleBarText.innerHTML;
-	let number = eval(text);
-	titleBarText.innerHTML = number.toString(10);
+	try{
+		let number = eval(text);
+		titleBarText.innerHTML = number.toString(10);
+		
+		let newHistoryContainer = document.createElement("DIV");
+		let newHistoryElement = document.createElement("P");
+		
+		newHistoryElement.innerHTML = text + ' = ' +  number.toString(10);
+		newHistoryElement.className = "historyElement";
 	
-	let newHistoryElement = document.createElement("P");
-	newHistoryElement.innerHTML = text + ' = ' +  number.toString(10);
-	newHistoryElement.className = "historyElement";
-	newHistoryElement.style.display = "block";
-	historyText.appendChild(newHistoryElement);
+		newHistoryContainer.appendChild(newHistoryElement);
+		historyText.appendChild(newHistoryContainer);
+	}
+	catch(err){
+		titleBarText.innerHTML = "Error";
+	}
+	
+	
+	
 	isNewLine = true;
-	console.log(document.querySelector(".historyElement"));
+};
+
+var clearTitle = () => {
+	titleBarText.innerHTML = "";
+};
+
+var removeOneChar = () =>{
+	let string = titleBarText.innerHTML;
+	string = string.slice(0,-1);
+	titleBarText.innerHTML = string;
 };
 
 enterButton = buttons.filter(element => element.innerHTML == 'Enter');
-buttons = buttons.filter(element => element.innerHTML != 'Enter');
+clearButton = buttons.filter(element => element.innerHTML == 'Clear');
+backButton = buttons.filter(element => element.innerHTML == 'Back');
+
+buttons = buttons.filter(element => element.innerHTML != 'Enter' && element.innerHTML != 'Clear' && element.innerHTML != 'Back');
+
 buttons.forEach(eventHandler);
 enterButton[0].addEventListener('click',ConvertToNumber);
-console.log(historyText);
+clearButton[0].addEventListener('click',clearTitle);
+backButton[0].addEventListener('click',removeOneChar);
 
 
