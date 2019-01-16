@@ -1,3 +1,4 @@
+
 var buttons = document.getElementsByTagName("BUTTON");
 var titleBarText = document.querySelector(".title").querySelector('p');
 
@@ -24,3 +25,4 @@ buttons = buttons.filter(element => element.innerHTML != 'Enter');
 buttons.forEach(eventHandler);
 enterButton[0].addEventListener('click',ConvertToNumber);
 console.log(eval('5+3*8'));
+
