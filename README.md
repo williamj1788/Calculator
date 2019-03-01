@@ -1,2 +1,2 @@
 # First-Calculator-Website
-A simply and basic calulator.
+A basic calulator
